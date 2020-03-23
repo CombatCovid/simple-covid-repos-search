@@ -15,7 +15,7 @@ const httpEndpoint = process.env.VUE_APP_GRAPHQL_HTTP || 'https://api.github.com
 const httpLink = new HttpLink({
   uri: httpEndpoint,
   headers: {
-    Authorization: 'Bearer 6f2fac0d4309f1de14e0bb72111c2764d2d51792'
+    Authorization: `Bearer ${process.env.VUE_APP_GITHUB_TOKEN}`
   }
 });
 
