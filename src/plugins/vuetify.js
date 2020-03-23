@@ -1,11 +1,7 @@
 import Vue from 'vue';
 import Vuetify from 'vuetify/lib';
 
-Vue.use(Vuetify, {
-  options: {
-    customProperties: true
-  }
-});
+Vue.use(Vuetify);
 
 export default new Vuetify({
   theme: {
@@ -13,14 +9,14 @@ export default new Vuetify({
     themes: {
       dark: {
         primary: '#040404',
-        secondary: '#282828'
+        secondary: '#282828',
       },
       light: {
         primaryDark: '#040404',
         secondaryDark: '#0c0c0c',
         teritaryDark: '#121212',
-        primaryGray: '#282828'
-      }
-    }
-  }
+        primaryGray: '#282828',
+      },
+    },
+  },
 });

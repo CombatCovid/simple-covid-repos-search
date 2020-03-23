@@ -1,5 +1,5 @@
 <template>
-  <v-app dark id="App">
+  <v-app id="App" dark>
     <v-content>
       <Home />
     </v-content>
@@ -13,12 +13,12 @@ export default {
   name: 'App',
 
   components: {
-    Home
+    Home,
   },
 
   data: () => ({
     //
-  })
+  }),
 };
 </script>
 
