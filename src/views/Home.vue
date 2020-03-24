@@ -1,23 +1,21 @@
 <template>
   <v-container id="home">
-    <v-alert
-      icon="mdi-source-repository"
-      prominent
-      text
-      type="info"
-      style="border-radius: 15px; font-weight: bold;"
+    <v-text style="color: #111; font-size: 1.2rem;" class="font-weight-bold"
+      >Welcome to #CombatCovid Repositories</v-text
     >
-      List of #CombatCovid19 repositories
-    </v-alert>
 
-    <v-card
-      v-if="organization"
-      class="mx-auto"
-      elevation="0"
-      style="border-radius: 20px;"
-    >
-      <RepoList :repos="organization.repositories.nodes" />
-    </v-card>
+    <v-row align="center" justify="center">
+      <v-col sm="12" md="10">
+        <v-card
+          v-if="organization"
+          class="mx-auto"
+          elevation="0"
+          style="border-radius: 20px;"
+        >
+          <RepoList :repos="organization.repositories.nodes" />
+        </v-card>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
@@ -51,4 +49,12 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+#home {
+  height: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+</style>

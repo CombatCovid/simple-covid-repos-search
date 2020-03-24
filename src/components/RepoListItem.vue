@@ -11,14 +11,20 @@
       </v-list-item-content>
     </v-list-item-content>
 
-    <v-list-item-avatar
-      style="
-        background: #dde1e7;
-        box-shadow: 22px 22px 44px #bcbfc4, -22px -22px 44px #feffff;
-      "
-    >
-      <v-img :src="item.openGraphImageUrl" />
-    </v-list-item-avatar>
+    <v-tooltip bottom>
+      <template v-slot:activator="{ on }">
+        <v-list-item-avatar
+          style="
+            background: #dde1e7;
+            box-shadow: 22px 22px 44px #bcbfc4, -22px -22px 44px #feffff;
+          "
+          v-on="on"
+        >
+          <v-img :src="item.openGraphImageUrl" />
+        </v-list-item-avatar>
+      </template>
+      <span>Go to Github</span>
+    </v-tooltip>
   </v-list-item>
 </template>
 
@@ -47,12 +53,6 @@ export default {
     border-radius: 25px;
     background: #dde1e7;
     box-shadow: inset 5px 5px 15px #ced1d7, inset -5px -5px 15px #ecf1f7;
-    /* 
-    background: #dde1e7;
-    box-shadow: inset 5px 5px 14px #b3b6bb, inset -5px -5px 14px #ffffff; */
-  }
-
-  &:active {
   }
 }
 </style>

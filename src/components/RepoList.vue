@@ -1,7 +1,6 @@
 <template>
   <v-list
     rounded
-    nav
     dense
     style="
       border-radius: 20px;
@@ -10,6 +9,23 @@
       padding: 0;
     "
   >
+    <v-list-item>
+      <v-tooltip left>
+        <template v-slot:activator="{ on }">
+          <v-icon class="info--text mr-2" v-on="on"
+            >mdi-source-repository</v-icon
+          >
+        </template>
+        <span>Github</span>
+      </v-tooltip>
+
+      <v-list-item-title class="font-weight-bold info--text"
+        >Repositories</v-list-item-title
+      >
+      <v-list-item-action-text class="mr-5 info--text font-weight-bold">{{
+        repos.length
+      }}</v-list-item-action-text>
+    </v-list-item>
     <RepoListItem v-for="(repo, index) in repos" :key="index" :item="repo" />
   </v-list>
 </template>
