@@ -1,5 +1,6 @@
 <template>
   <v-list
+    rounded
     nav
     dense
     style="
