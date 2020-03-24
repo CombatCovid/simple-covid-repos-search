@@ -1,10 +1,8 @@
 <template>
   <v-container id="home">
-    <div>
-      <v-alert icon="mdi-book-open-variant" prominent text type="info">
-        List of all Repositories #CombatCovid19
-      </v-alert>
-    </div>
+    <v-alert icon="mdi-source-repository" prominent text type="info">
+      List of all Repositories #CombatCovid19
+    </v-alert>
 
     <v-card v-if="organization" class="mx-auto" dark>
       <RepoList :repos="organization.repositories.nodes" />
@@ -27,7 +25,7 @@ export default {
     organization: gql`
       query {
         organization(login: "CombatCovid") {
-          repositories(first: 10) {
+          repositories(first: 10, orderBy: { field: NAME, direction: ASC }) {
             nodes {
               name
               description
