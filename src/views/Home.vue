@@ -40,6 +40,7 @@ export default {
               description
               openGraphImageUrl
               url
+              updatedAt
             }
           }
         }

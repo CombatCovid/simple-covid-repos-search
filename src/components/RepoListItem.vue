@@ -8,6 +8,9 @@
         <v-list-item-subtitle class="grey--text">{{
           item.description
         }}</v-list-item-subtitle>
+        <v-list-item-subtitle class="grey--text mt-4"
+          >Last updated: {{ dateFormatted }}</v-list-item-subtitle
+        >
       </v-list-item-content>
     </v-list-item-content>
 
@@ -29,11 +32,20 @@
 </template>
 
 <script>
+import { formatDistanceToNow } from 'date-fns';
+
 export default {
   props: {
     item: {
       type: Object,
       default: () => {},
+    },
+  },
+  computed: {
+    dateFormatted() {
+      return formatDistanceToNow(new Date(this.item.updatedAt), {
+        addSuffix: true,
+      });
     },
   },
   methods: {
