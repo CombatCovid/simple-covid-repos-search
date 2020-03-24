@@ -13,8 +13,8 @@ export default {
   },
   props: {
     repos: {
-      type: Object,
-      default: () => {},
+      type: Array,
+      default: () => [],
     },
   },
 };
