@@ -1,8 +1,10 @@
 <template>
-  <v-list-item two-line @click="onClick()">
+  <v-list-item two-line class="tile" @click="onClick()">
     <v-list-item-content>
       <v-list-item-content>
-        <v-list-item-title>{{ item.name }}</v-list-item-title>
+        <v-list-item-title style="font-weight: bold; color: #9fabc7;">{{
+          item.name
+        }}</v-list-item-title>
         <v-list-item-subtitle class="grey--text">{{
           item.description
         }}</v-list-item-subtitle>
@@ -31,4 +33,18 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped lang="scss">
+.tile {
+  margin: 5px;
+  border-radius: 4px;
+
+  &:hover {
+    border-radius: 20px;
+    background: #dde1e7;
+    box-shadow: inset 10px 10px 20px #c5c8ce, inset -10px -10px 20px #f5faff;
+  }
+
+  &:active {
+  }
+}
+</style>
