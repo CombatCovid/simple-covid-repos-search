@@ -2,7 +2,7 @@
   <v-list-item two-line class="tile" @click="onClick()">
     <v-list-item-content>
       <v-list-item-content>
-        <v-list-item-title style="font-weight: bold; color: #767f94;">{{
+        <v-list-item-title class="font-weight-bold accent--text subtitle-2">{{
           item.name
         }}</v-list-item-title>
         <v-list-item-subtitle class="grey--text">{{
@@ -14,20 +14,14 @@
       </v-list-item-content>
     </v-list-item-content>
 
-    <v-tooltip bottom>
-      <template v-slot:activator="{ on }">
-        <v-list-item-avatar
-          style="
-            background: #dde1e7;
-            box-shadow: 22px 22px 44px #bcbfc4, -22px -22px 44px #feffff;
-          "
-          v-on="on"
-        >
-          <v-img :src="item.openGraphImageUrl" />
-        </v-list-item-avatar>
-      </template>
-      <span>Go to Github</span>
-    </v-tooltip>
+    <v-list-item-avatar
+      style="
+        background: #dde1e7;
+        box-shadow: 22px 22px 44px #bcbfc4, -22px -22px 44px #feffff;
+      "
+    >
+      <v-img :src="item.openGraphImageUrl" />
+    </v-list-item-avatar>
   </v-list-item>
 </template>
 

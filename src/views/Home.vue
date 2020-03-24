@@ -1,18 +1,19 @@
 <template>
   <v-container id="home">
-    <v-text style="color: #111; font-size: 1.2rem;" class="font-weight-bold"
-      >Welcome to #CombatCovid Repositories</v-text
-    >
+    <p class="display-1 accent--text font-weight-bold mb-10 mt-2 text-center">
+      #CombatCovid
+    </p>
 
     <v-row align="center" justify="center">
-      <v-col sm="12" md="10">
-        <v-card
-          v-if="organization"
-          class="mx-auto"
-          elevation="0"
-          style="border-radius: 20px;"
-        >
-          <RepoList :repos="organization.repositories.nodes" />
+      <v-col sm="12" md="8">
+        <div v-if="$apollo.loading" class="text-center mt-12">
+          <v-progress-circular class="text-center" color="info" indeterminate />
+        </div>
+        <v-card elevation="0" style="border-radius: 20px;">
+          <RepoList
+            v-if="organization"
+            :repos="organization.repositories.nodes"
+          />
         </v-card>
       </v-col>
     </v-row>
@@ -50,12 +51,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-#home {
-  height: 100%;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-</style>
+<style lang="scss" scoped></style>

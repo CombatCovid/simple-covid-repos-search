@@ -12,11 +12,11 @@
     <v-list-item>
       <v-tooltip left>
         <template v-slot:activator="{ on }">
-          <v-icon class="info--text mr-2" v-on="on"
-            >mdi-source-repository</v-icon
+          <v-icon class="info--text mr-2" v-on="on" @click="onClick()"
+            >mdi-github</v-icon
           >
         </template>
-        <span>Github</span>
+        <span>Organization</span>
       </v-tooltip>
 
       <v-list-item-title class="font-weight-bold info--text"
@@ -41,6 +41,11 @@ export default {
     repos: {
       type: Array,
       default: () => [],
+    },
+  },
+  methods: {
+    onClick() {
+      window.open('https://github.com/CombatCovid');
     },
   },
 };
