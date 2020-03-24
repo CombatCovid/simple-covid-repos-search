@@ -1,5 +1,5 @@
 <template>
-  <v-list-item>
+  <v-list-item @click="onClick()">
     <v-list-item-content>
       <v-list-item-content>
         <v-list-item-title v-text="item.name"></v-list-item-title>
@@ -19,6 +19,11 @@ export default {
     item: {
       type: Object,
       default: () => {},
+    },
+  },
+  methods: {
+    onClick() {
+      window.open(this.item.url);
     },
   },
 };

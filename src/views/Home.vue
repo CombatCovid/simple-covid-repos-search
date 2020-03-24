@@ -32,6 +32,7 @@ export default {
               name
               description
               openGraphImageUrl
+              url
             }
           }
         }
