@@ -1,14 +1,16 @@
 <template>
-  <v-list-item @click="onClick()">
+  <v-list-item two-line @click="onClick()">
     <v-list-item-content>
       <v-list-item-content>
-        <v-list-item-title v-text="item.name"></v-list-item-title>
-        <v-list-item-subtitle v-text="item.description"></v-list-item-subtitle>
+        <v-list-item-title>{{ item.name }}</v-list-item-title>
+        <v-list-item-subtitle class="grey--text">{{
+          item.description
+        }}</v-list-item-subtitle>
       </v-list-item-content>
     </v-list-item-content>
 
     <v-list-item-avatar>
-      <v-img :src="item.openGraphImageUrl"></v-img>
+      <v-img :src="item.openGraphImageUrl" />
     </v-list-item-avatar>
   </v-list-item>
 </template>

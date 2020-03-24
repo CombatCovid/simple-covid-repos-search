@@ -1,5 +1,5 @@
 <template>
-  <v-list rounded>
+  <v-list nav dense>
     <RepoListItem v-for="(repo, index) in repos" :key="index" :item="repo" />
   </v-list>
 </template>
